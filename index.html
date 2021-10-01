@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="src" href="components.html" />
+
+    <title>Welcome To Passport Automation System</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+      integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+      integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+
+  </head>
+  <body id="loginBody" style="display: none;">
+    <div class="d-flex justify-content-center p-5">
+      <div class="modal fade" tabindex="-1" role="dialog">
+        <div
+          class="modal-dialog modal-dialog-centered justify-content-center"
+          role="document"
+        >
+          <span class="fa fa-spinner fa-spin fa-3x"></span>
+        </div>
+      </div>
+      <div class="card  ">
+        <div class="card-header bg-transparent">
+          <center><h3>Login</h3></center>
+        </div>
+        <form onsubmit="login()" id="loginForm" class="card-body px-5 py-4">
+          <center>
+            <small><span id="error" style="color: red;"></span></small>
+          </center>
+          <center>
+            <div class="form-group">
+              <input
+                id="email"
+                type="text"
+                class="input form-control"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <input
+                id="password"
+                type="password"
+                class="input form-control"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <br />
+
+            <button type="submit" class="btn btn-primary form-control">
+              Login
+            </button>
+          </center>
+        </form>
+        <div class="card-footer bg-transparent">
+          <a href="signup.html">SignUp</a>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
