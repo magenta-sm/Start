@@ -29,3 +29,33 @@ function forgotPass() {
       document.getElementById("error").innerHTML = error.message;
     });
 }
+
+
+function login() {
+  $(".modal").modal("show");
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(async (success) => {
+      let db = firebase.firestore();
+      let user = firebase.auth().currentUser;
+      let uid = user.uid;
+
+      const snapshot = await db.collection("users").doc(uid).get();
+      const data = snapshot.data();
+      if (data["userType"] == "admin") {
+        location.replace("/pages/admin.html");
+      } else if (data["userType"] == "police") {
+        location.replace("/pages/police.html");
+      } else {
+        location.replace("/pages/applicant.html");
+      }
+      $(".modal").modal("hide");
+    })
+    .catch((error) => {
+      document.getElementById("error").innerHTML = error.message;
+      $(".modal").modal("hide");
+    });
+}
